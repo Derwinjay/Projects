@@ -27,6 +27,9 @@ def format_response(weather):
         final_string = "There was a problem retrieving that info"
 
     return final_string
+
+#This fuction is used to weather api
+#it takes in the value the user enter into the "entry"
 def get_weather(city):
     weather_key = '042f6c06d5410a3eac412c958bdc3e3d'
     url = 'https://api.openweathermap.org/data/2.5/weather'
@@ -42,7 +45,7 @@ root = tk.Tk()
 canvas = tk.Canvas(root,height=HEIGTH,width=WIDTH)
 canvas.pack() #pack() draws object to the screen(gui)
 
-#makes an image and 
+#makes an image and sets it as the background of the canvas
 backgroud_image = tk.PhotoImage(file='landscape.png')
 background_label = tk.Label(root, image=backgroud_image)
 background_label.place(relwidth=1, relheight=1)
@@ -58,7 +61,7 @@ entry.place(relwidth = 0.65, relheight = 1)
 button = tk.Button(frame,bg = "blue",text="Text button", font = 40,command=lambda:get_weather(entry.get()))
 button.place(relx = 0.7, relwidth = 0.3, relheight = 1)     #lambda gets info from function updates input
 
-
+#makes a frame at the bottom of the canvas
 lower_frame = tk.Frame(root, bg ="purple", bd = 10)
 lower_frame.place(relx = 0.50, rely =0.25, relwidth = 0.75, relheight=0.6, anchor= "n" )
 
